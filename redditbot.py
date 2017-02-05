@@ -12,7 +12,6 @@ response = requests.get("https://oauth.reddit.com/user/" + name + "/about/.json"
 response.json()
 #These find the comment and link karma.
 
-print("---------------------------------------------------------")
 print(response.text[response.text.index("link_karma") + 13:response.text.index(", \"comment")])
 print(response.text[response.text.index("comment_karma") + 16:response.text.index(", \"is_gold")])
 
