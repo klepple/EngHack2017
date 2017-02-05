@@ -43,15 +43,11 @@ def checkRedditKarma(name):
     response = requests.get("https://oauth.reddit.com/user/" + name + "/about/.json", headers=headers)
     response.json()
     #These find the comment and link karma.
-    try:
-        lkarma = (response.text[response.text.index("link_karma") + 13:response.text.index(", \"comment")])
-        lkarma = int(lkarma)
-        ckarma = (response.text[response.text.index("comment_karma") + 16:response.text.index(", \"is_gold")])
-        ckarma = int(ckarma)
-        return lkarma + ckarma
-    else:
-        return "failed"
-
+    lkarma = (response.text[response.text.index("link_karma") + 13:response.text.index(", \"comment")])
+    lkarma = int(lkarma)
+    ckarma = (response.text[response.text.index("comment_karma") + 16:response.text.index(", \"is_gold")])
+    ckarma = int(ckarma)
+    return lkarma + ckarma
 
 def checkTwitter(name):
     # Variables that contains the user credentials to access Twitter API
@@ -118,7 +114,10 @@ async def on_message(message):
     elif message.content.startswith('!checktwitter'):
         if ' ' in message.content:
             name = message.content[message.content.index(' ') + 1:]
-            msg = name + " has " + checkTwitter(name) + " followers."
+            if(checkTwitter(name) == "1"):
+                msg = name + " has " + checkTwitter(name) + " follower."
+            else:
+                msg = name + " has " + checkTwitter(name) + " followers."
         else:
             msg = 'No valid name.'
         await client.send_message(message.author.server, msg)
