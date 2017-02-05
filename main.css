@@ -1,3 +1,14 @@
 .darkBG {
 	background: #999;
 }
+.monsterLGreen {
+	background: : #9CFE69;
+}
+.monsterDGreen {
+
+}
+.navbar-default {
+    background-color: #9CFE69 !important;
+    color: #9CFE69;
+    border-color: #E7E7E7;
+}
