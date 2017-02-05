@@ -1,6 +1,7 @@
 .darkBG {
 	background: #999;
 }
+<<<<<<< HEAD
 
 .darkerBG {
 	background: #666;
@@ -9,3 +10,16 @@
 .darkestBG {
 	background: #333;
 }
+=======
+.monsterLGreen {
+	background: : #9CFE69;
+}
+.monsterDGreen {
+
+}
+.navbar-default {
+    background-color: #9CFE69 !important;
+    color: #9CFE69;
+    border-color: #E7E7E7;
+}
+>>>>>>> 176ff5ad89c59dc349210588421717cf317f4f0a
