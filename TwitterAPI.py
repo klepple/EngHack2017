@@ -22,12 +22,6 @@ api = tweepy.API(auth)
 # api.update_status('All these tweets are generated using API!')
 
 # Get the User object for twitter...
-user = api.get_user('twitter')
+user = api.get_user('engHack2017')
 print user.screen_name
 print user.followers_count
-for friend in user.friends():
-   print friend.screen_name
-
-followers = api.get
-
-GET https://api.twitter.com/1.1/followers/ids.json?cursor=-1&screen_name=andypiper&count=5000
