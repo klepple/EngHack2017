@@ -4,6 +4,7 @@
 #Access token secret: 49NpU9CefbcThL9y0Gw7XBWwUaxmqU7DDaeaO5zv75YAu
 
 import tweepy
+import sys
 
 # Variables that contains the user credentials to access Twitter API
 access_token = '827998835569999876-g2v5tnrhuz0ab4uvdbhOFUh8pQZt7qo'
@@ -17,11 +18,12 @@ auth.set_access_token(access_token, access_token_secret)
 
 # Creation of the actual interface, using authentication
 api = tweepy.API(auth)
-
+# User name
+name = str(sys.argv)[18:-2]
 # Sample method, used to update a status
 # api.update_status('All these tweets are generated using API!')
 
 # Get the User object for twitter...
-user = api.get_user('engHack2017')
+user = api.get_user(name)
 print user.screen_name
 print user.followers_count
